@@ -1,0 +1,13 @@
+name: "Maven Build Action"
+description: "A custom GitHub Action to build a Java project with Maven"
+author: "Juan Felipe Jaramillo <juanfelipejaramillolosada@gmail.com"
+inputs:
+  project_path:
+    description: "Path to the Maven project (relative to the root)"
+    required: true
+    default: "."
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "${{ inputs.project_path }}"
